@@ -1,198 +1,1301 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presença Digital Invisível</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presença Digital Invisível — conteúdo profissional para médicos</title>
+  <meta name="description" content="Conteúdo profissional para médicos, criado nos bastidores: posts, roteiros de Reels, legendas, e-mails e newsletter prontos para publicar.">
+  <meta name="theme-color" content="#071319">
+  <meta property="og:title" content="Presença Digital Invisível">
+  <meta property="og:description" content="Sua autoridade médica, construída nos bastidores. Você revisa e publica.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background-color: #ffffff;
-        }
+  <style>
+    /* ---------- Tokens ---------- */
+    :root {
+      --ink: #071319;
+      --ink-2: #0B1E28;
+      --ink-3: #12303B;
+      --paper: #F7F3EB;
+      --paper-2: #EFE7DA;
+      --cream: #F3EDE2;
+      --text: #13232C;
+      --muted: #586A72;
+      --muted-dark: #9DB1B7;
+      --gold: #C9A468;
+      --gold-soft: #E8CD9F;
+      --clay: #A8624B;
+      --line: rgba(19, 35, 44, .13);
+      --line-dark: rgba(243, 237, 226, .14);
+      --radius: 18px;
+      --wrap: 1160px;
+      --ease: cubic-bezier(.22, .68, .2, 1);
+      --serif: "Instrument Serif", "Iowan Old Style", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+    /* ---------- Reset ---------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        header {
-            padding: 60px 0 40px;
-            text-align: center;
-            border-bottom: 1px solid #eaeaea;
-        }
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
 
-        header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            color: #0f2c4c;
-        }
+    body {
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
 
-        header p {
-            font-size: 17px;
-            color: #555;
-            max-width: 520px;
-            margin: 0 auto;
-        }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    ul { list-style: none; }
+    ::selection { background: var(--gold-soft); color: var(--ink); }
 
-        section {
-            padding: 48px 0;
-            border-bottom: 1px solid #eaeaea;
-        }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
 
-        section:last-of-type {
-            border-bottom: none;
-        }
+    .wrap {
+      width: min(var(--wrap), 100% - 48px);
+      margin-inline: auto;
+    }
 
-        h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #0f2c4c;
-        }
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 100;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 12px 20px;
+      font-weight: 600;
+      border-radius: 0 0 10px 0;
+    }
+    .skip:focus { left: 0; }
 
-        p {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 16px;
-        }
+    /* ---------- Typography ---------- */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      opacity: .7;
+    }
 
-        ul {
-            list-style: none;
-            margin: 20px 0;
-        }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
 
-        ul li {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 12px;
-            font-size: 16px;
-            color: #333;
-        }
+    h2 {
+      font-size: clamp(2rem, 3.9vw, 3.1rem);
+      line-height: 1.08;
+    }
 
-        ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2b6cb0;
-            font-weight: bold;
-        }
+    .section-head { max-width: 760px; margin-bottom: clamp(38px, 5vw, 62px); }
+    .section-head h2 { margin-top: 18px; }
+    .section-head p {
+      margin-top: 20px;
+      font-size: 1.06rem;
+      color: var(--muted);
+      max-width: 58ch;
+    }
 
-        .highlight {
-            background-color: #f7fafc;
-            border-left: 3px solid #2b6cb0;
-            padding: 20px 24px;
-            margin: 28px 0;
-            border-radius: 0 6px 6px 0;
-        }
+    .ink h2, .ink .section-head p { color: var(--cream); }
+    .ink .section-head p { color: rgba(243, 237, 226, .74); }
 
-        .cta {
-            text-align: center;
-            padding: 50px 0 60px;
-        }
+    em { font-style: italic; }
 
-        .button {
-            display: inline-block;
-            background-color: #0f2c4c;
-            color: white;
-            text-decoration: none;
-            padding: 14px 32px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }
+    /* ---------- Buttons ---------- */
+    .btn {
+      --btn-bg: var(--gold);
+      --btn-fg: #12100A;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--btn-bg);
+      color: var(--btn-fg);
+      font-family: var(--sans);
+      font-size: .95rem;
+      font-weight: 500;
+      letter-spacing: .01em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .35s var(--ease), background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .35s var(--ease);
+    }
+    .btn svg { width: 17px; height: 17px; transition: transform .35s var(--ease); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(7, 19, 25, .55); }
+    .btn:hover svg { transform: translateX(3px); }
 
-        .button:hover {
-            background-color: #1a3d66;
-        }
+    .btn.ghost {
+      --btn-bg: transparent;
+      --btn-fg: var(--cream);
+      border-color: rgba(243, 237, 226, .28);
+    }
+    .btn.ghost:hover { border-color: rgba(243, 237, 226, .6); background: rgba(243, 237, 226, .06); }
 
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            font-size: 13px;
-            color: #888;
-            border-top: 1px solid #eaeaea;
-        }
+    .btn.dark {
+      --btn-bg: var(--ink);
+      --btn-fg: var(--cream);
+    }
+    .btn.dark:hover { --btn-bg: var(--ink-3); }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 40px 0 30px;
-            }
-            header h1 {
-                font-size: 24px;
-            }
-            section {
-                padding: 36px 0;
-            }
-        }
-    </style>
+    /* ---------- Nav ---------- */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      background: rgba(7, 19, 25, .72);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(16px) saturate(120%);
+      -webkit-backdrop-filter: blur(16px) saturate(120%);
+      transition: background-color .3s ease, border-color .3s ease;
+    }
+    .nav.scrolled {
+      background: rgba(7, 19, 25, .92);
+      border-bottom-color: var(--line-dark);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      color: var(--cream);
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201, 164, 104, .55);
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      color: var(--gold-soft);
+      transition: background-color .3s ease, color .3s ease;
+    }
+    .brand:hover .brand-mark { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .brand-text {
+      font-size: .82rem;
+      line-height: 1.15;
+      letter-spacing: .02em;
+      color: var(--cream);
+    }
+    .brand-text span { display: block; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(243, 237, 226, .5); margin-top: 3px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+    .nav-links a {
+      color: rgba(243, 237, 226, .74);
+      text-decoration: none;
+      position: relative;
+      padding-block: 4px;
+      transition: color .25s ease;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s var(--ease);
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav .btn { padding: 11px 20px; font-size: .84rem; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: clip;
+      background: var(--ink);
+      color: var(--cream);
+      padding: clamp(122px, 16vh, 172px) 0 clamp(64px, 8vw, 96px);
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(70% 55% at 82% 8%, rgba(201, 164, 104, .22), transparent 62%),
+        radial-gradient(60% 60% at 6% 92%, rgba(18, 48, 59, .85), transparent 66%),
+        linear-gradient(180deg, #0A1A22 0%, var(--ink) 68%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(rgba(243, 237, 226, .07) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(65% 65% at 60% 35%, #000 0%, transparent 78%);
+      -webkit-mask-image: radial-gradient(65% 65% at 60% 35%, #000 0%, transparent 78%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+      gap: clamp(36px, 5vw, 74px);
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.65rem, 5.5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -.022em;
+      margin-top: 24px;
+      text-wrap: balance;
+    }
+    .hero h1 em { color: var(--gold-soft); }
+
+    .hero-sub {
+      margin-top: 26px;
+      max-width: 46ch;
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(243, 237, 226, .78);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .hero-formats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      margin-top: 38px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line-dark);
+      font-size: .74rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(243, 237, 226, .55);
+    }
+    .hero-formats li { display: flex; align-items: center; gap: 10px; }
+    .hero-formats li + li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: .8;
+    }
+
+    /* Entry animation */
+    .rise { animation: rise .95s var(--ease) both; }
+    .rise.d1 { animation-delay: .08s; }
+    .rise.d2 { animation-delay: .18s; }
+    .rise.d3 { animation-delay: .28s; }
+    .rise.d4 { animation-delay: .38s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ---------- Hero visual (CSS-only content pack) ---------- */
+    .pack {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 18px 0;
+      perspective: 1200px;
+    }
+    .pack::before {
+      content: "";
+      position: absolute;
+      width: 78%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 164, 104, .3), transparent 68%);
+      filter: blur(18px);
+      z-index: 0;
+    }
+
+    .post {
+      position: relative;
+      z-index: 1;
+      width: min(330px, 100%);
+      border-radius: 22px;
+      background: #0E222C;
+      border: 1px solid rgba(243, 237, 226, .12);
+      box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .9), 0 2px 0 rgba(255, 255, 255, .04) inset;
+      overflow: hidden;
+      transform: rotate(-1.4deg);
+      animation: floaty 9s ease-in-out infinite;
+    }
+    @keyframes floaty {
+      0%, 100% { transform: rotate(-1.4deg) translateY(0); }
+      50% { transform: rotate(-.4deg) translateY(-9px); }
+    }
+
+    .post-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px;
+      border-bottom: 1px solid rgba(243, 237, 226, .08);
+    }
+    .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, var(--gold-soft), #8E6F3F);
+      flex: none;
+    }
+    .post-user { display: flex; flex-direction: column; gap: 1px; }
+    .post-user b { font-size: .7rem; font-weight: 500; color: var(--cream); letter-spacing: .01em; }
+    .post-user span { font-size: .6rem; color: rgba(243, 237, 226, .45); }
+    .post-dots { margin-left: auto; letter-spacing: 2px; color: rgba(243, 237, 226, .4); font-size: .8rem; }
+
+    .post-art {
+      position: relative;
+      aspect-ratio: 4 / 4.4;
+      overflow: hidden;
+      background: radial-gradient(120% 95% at 18% 8%, #1B4049 0%, #0B1E28 56%, #061117 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 20px;
+      isolation: isolate;
+    }
+    .orbit {
+      position: absolute;
+      inset: auto -30% 26% auto;
+      width: 78%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 164, 104, .45);
+      z-index: -1;
+    }
+    .orbit::before {
+      content: "";
+      position: absolute;
+      inset: 16%;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 164, 104, .28);
+    }
+    .orbit::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -8%;
+      width: 118%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 164, 104, .5), transparent);
+    }
+
+    .post-tag {
+      align-self: flex-start;
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(201, 164, 104, .38);
+      border-radius: 999px;
+      padding: 4px 11px;
+    }
+    .post-title {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      line-height: 1.12;
+      color: var(--cream);
+      letter-spacing: -.01em;
+    }
+    .post-title em { color: var(--gold-soft); }
+
+    .post-foot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-top: 1px solid rgba(243, 237, 226, .08);
+      color: rgba(243, 237, 226, .5);
+    }
+    .post-foot svg { width: 15px; height: 15px; }
+    .post-foot .meta { margin-left: auto; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
+
+    .float {
+      position: absolute;
+      z-index: 2;
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 14px;
+      box-shadow: 0 24px 44px -26px rgba(0, 0, 0, .85);
+      padding: 11px 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .66rem;
+      line-height: 1.3;
+    }
+    .float b { display: block; font-weight: 600; font-size: .68rem; }
+    .float small { font-size: .58rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+    .float-reel {
+      left: -6%;
+      top: 16%;
+      transform: rotate(-3deg);
+      animation: floaty 11s ease-in-out infinite reverse;
+    }
+    .float-reel .thumb {
+      width: 42px;
+      height: 42px;
+      flex: none;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 25%, #1E4A55, #071319);
+      display: grid;
+      place-items: center;
+    }
+    .float-reel .thumb svg { width: 14px; height: 14px; color: var(--gold-soft); }
+
+    .float-cal {
+      right: -4%;
+      bottom: 12%;
+      transform: rotate(2.2deg);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 148px;
+    }
+    .float-cal .cal-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .float-cal .cal-head small { font-size: .55rem; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+    .float-cal .cal-head b { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; line-height: 1; }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+    }
+    .cal-grid i {
+      aspect-ratio: 1;
+      border-radius: 3px;
+      background: rgba(19, 35, 44, .09);
+    }
+    .cal-grid i.on { background: var(--gold); }
+    .cal-grid i.soft { background: rgba(201, 164, 104, .32); }
+
+    /* ---------- Marquee ---------- */
+    .strip {
+      background: var(--ink-2);
+      border-block: 1px solid var(--line-dark);
+      overflow: hidden;
+      padding: 18px 0;
+    }
+    .strip-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+    .strip-group { display: flex; align-items: center; gap: 40px; padding-right: 40px; }
+    .strip span {
+      font-size: .7rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(243, 237, 226, .58);
+      white-space: nowrap;
+    }
+    .strip i {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex: none;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ---------- Sections ---------- */
+    section { scroll-margin-top: 92px; }
+    .band { padding: clamp(72px, 10vw, 128px) 0; }
+    .band.paper { background: var(--paper); }
+    .band.paper-2 { background: var(--paper-2); }
+    .band.ink {
+      position: relative;
+      background: var(--ink);
+      color: var(--cream);
+      overflow: clip;
+    }
+    .band.ink::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 50% at 88% 0%, rgba(201, 164, 104, .16), transparent 62%);
+      pointer-events: none;
+    }
+    .band.ink > .wrap { position: relative; }
+
+    /* ---------- Problem ---------- */
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: clamp(34px, 6vw, 82px);
+      align-items: start;
+    }
+    .split-head { position: sticky; top: 116px; }
+    .split-head h2 { margin-top: 18px; text-wrap: balance; }
+    .split-head p { margin-top: 20px; color: var(--muted); max-width: 40ch; }
+
+    .diagnosis { display: grid; gap: 14px; }
+    .diag-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 24px 26px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s ease;
+    }
+    .diag-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(201, 164, 104, .55);
+      box-shadow: 0 22px 44px -32px rgba(7, 19, 25, .5);
+    }
+    .diag-num {
+      font-family: var(--serif);
+      font-size: .92rem;
+      color: var(--clay);
+      border: 1px solid rgba(168, 98, 75, .32);
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+    .diag-card h3 { font-family: var(--sans); font-size: .95rem; font-weight: 600; letter-spacing: 0; }
+    .diag-card p { margin-top: 6px; font-size: .93rem; color: var(--muted); line-height: 1.6; }
+
+    .pullquote {
+      margin-top: 18px;
+      padding: 30px 30px 28px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .pullquote::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -60px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 164, 104, .28);
+    }
+    .pullquote q {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(1.24rem, 2vw, 1.55rem);
+      line-height: 1.35;
+      quotes: none;
+    }
+    .pullquote q em { color: var(--gold-soft); }
+    .pullquote span {
+      display: block;
+      margin-top: 16px;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(243, 237, 226, .5);
+    }
+
+    /* ---------- Solution ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      position: relative;
+      padding: 28px 26px 30px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s ease;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -34px rgba(7, 19, 25, .45); }
+    .card:hover::after { opacity: 1; }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(201, 164, 104, .14);
+      color: #8E6F3F;
+      margin-bottom: 20px;
+    }
+    .card-icon svg { width: 20px; height: 20px; }
+    .card h3 { font-family: var(--sans); font-size: .98rem; font-weight: 600; }
+    .card p { margin-top: 9px; font-size: .92rem; color: var(--muted); line-height: 1.6; }
+
+    .card.wide { grid-column: span 2; }
+    .card.wide .card-inner { display: flex; align-items: center; gap: 24px; }
+    .card.wide .card-icon { margin-bottom: 0; flex: none; }
+
+    .note-band {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(19, 35, 44, .22);
+      background: rgba(255, 255, 255, .5);
+      font-size: .94rem;
+      color: var(--text);
+    }
+    .note-band svg { width: 20px; height: 20px; flex: none; color: #8E6F3F; }
+
+    /* ---------- Steps ---------- */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line-dark);
+    }
+    .step {
+      position: relative;
+      padding: 34px 26px 8px 0;
+      border-right: 1px solid var(--line-dark);
+    }
+    .step:last-child { border-right: none; padding-right: 0; }
+    .step::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width .7s var(--ease) .1s;
+    }
+    .step.in::before { width: 100%; }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      line-height: 1;
+      color: rgba(201, 164, 104, .55);
+      letter-spacing: -.02em;
+    }
+    .step h3 {
+      margin-top: 20px;
+      font-size: 1.18rem;
+      color: var(--cream);
+    }
+    .step p {
+      margin-top: 10px;
+      font-size: .9rem;
+      line-height: 1.65;
+      color: rgba(243, 237, 226, .64);
+      max-width: 30ch;
+    }
+    .step + .step { padding-left: 26px; }
+
+    /* ---------- Audience ---------- */
+    .audience {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: clamp(34px, 6vw, 84px);
+      align-items: center;
+    }
+    .audience h2 { margin-top: 18px; text-wrap: balance; }
+    .audience p { margin-top: 20px; font-size: 1.02rem; color: var(--muted); max-width: 52ch; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(19, 35, 44, .16);
+      background: rgba(255, 255, 255, .65);
+      font-size: .84rem;
+      letter-spacing: .02em;
+    }
+    .chip::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .chip.mute { color: var(--muted); }
+
+    .audience-panel {
+      padding: 34px 32px;
+      border-radius: 22px;
+      background: var(--ink);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .audience-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -30% -50% auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 164, 104, .3), transparent 70%);
+    }
+    .audience-panel h3 { font-size: 1.5rem; line-height: 1.2; position: relative; }
+    .audience-panel p { position: relative; margin-top: 14px; font-size: .92rem; line-height: 1.65; color: rgba(243, 237, 226, .7); }
+    .audience-panel ul { position: relative; margin-top: 24px; display: grid; gap: 12px; }
+    .audience-panel li { display: flex; gap: 12px; align-items: flex-start; font-size: .9rem; color: rgba(243, 237, 226, .86); }
+    .audience-panel li svg { width: 16px; height: 16px; flex: none; color: var(--gold-soft); margin-top: 3px; }
+
+    /* ---------- Final CTA ---------- */
+    .cta-panel {
+      position: relative;
+      overflow: clip;
+      border-radius: 28px;
+      background: var(--ink);
+      color: var(--cream);
+      padding: clamp(46px, 7vw, 84px) clamp(28px, 6vw, 76px);
+      text-align: center;
+      isolation: isolate;
+    }
+    .cta-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(60% 90% at 50% 0%, rgba(201, 164, 104, .26), transparent 64%),
+        radial-gradient(50% 60% at 10% 100%, rgba(18, 48, 59, .9), transparent 62%);
+    }
+    .cta-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(rgba(243, 237, 226, .07) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 76%);
+      -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 76%);
+    }
+    .cta-panel .eyebrow { justify-content: center; }
+    .cta-panel .eyebrow::before { display: none; }
+    .cta-panel h2 {
+      font-size: clamp(2rem, 4.2vw, 3.3rem);
+      max-width: 22ch;
+      margin: 20px auto 0;
+      line-height: 1.06;
+      text-wrap: balance;
+    }
+    .cta-panel p {
+      margin: 20px auto 0;
+      max-width: 46ch;
+      color: rgba(243, 237, 226, .74);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .cta-small { margin-top: 18px; font-size: .76rem; letter-spacing: .08em; color: rgba(243, 237, 226, .45); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--ink-2);
+      color: rgba(243, 237, 226, .62);
+      border-top: 1px solid var(--line-dark);
+      padding: 40px 0 34px;
+    }
+    .foot-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: .78rem;
+    }
+    .foot-brand { display: flex; align-items: center; gap: 12px; color: var(--cream); }
+    .foot-brand .brand-mark { width: 30px; height: 30px; font-size: .9rem; }
+    .foot-brand small { display: block; font-size: .68rem; color: rgba(243, 237, 226, .45); letter-spacing: .04em; }
+    .foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .foot-links a { text-decoration: none; color: rgba(243, 237, 226, .58); transition: color .25s ease; }
+    .foot-links a:hover { color: var(--gold-soft); }
+
+    /* ---------- Reveal ---------- */
+    html.js .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+      transition-delay: var(--d, 0ms);
+    }
+    html.js .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1020px) {
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 52px; }
+      .hero { padding-top: 118px; }
+      .hero-sub { max-width: 52ch; }
+      .pack { padding-top: 6px; }
+      .split { grid-template-columns: 1fr; }
+      .split-head { position: static; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .card.wide { grid-column: span 2; }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .step { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 30px 0 30px; }
+      .step + .step { padding-left: 0; }
+      .step:nth-child(odd) { padding-right: 26px; }
+      .step:nth-child(even) { padding-left: 26px; border-left: 1px solid var(--line-dark); }
+      .step:nth-last-child(-n+2) { border-bottom: none; }
+      .audience { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--wrap), 100% - 36px); }
+      .nav-inner { height: 66px; }
+      .brand-text span { display: none; }
+      .nav .btn { padding: 10px 16px; font-size: .78rem; }
+      .float-reel, .float-cal { display: none; }
+      .post { transform: none; animation: none; }
+      .cards { grid-template-columns: 1fr; }
+      .card.wide { grid-column: auto; }
+      .card.wide .card-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .steps { grid-template-columns: 1fr; }
+      .step, .step + .step { padding: 24px 0; border-left: none !important; border-bottom: 1px solid var(--line-dark); }
+      .step:last-child { border-bottom: none; padding-bottom: 0; }
+      .step p { max-width: 42ch; }
+      .cta-panel { border-radius: 22px; }
+      .foot-inner { flex-direction: column; align-items: flex-start; }
+      .pullquote { padding: 26px 24px; }
+      .note-band { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+      html.js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
-        <header>
-            <h1>Presença Digital Invisível</h1>
-            <p>Conteúdo profissional para médicos, sem que você precise escrever uma linha.</p>
-        </header>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#topo" aria-label="Presença Digital Invisível — início">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span class="brand-text">Presença Digital<span>Invisível</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Seções da página">
+        <a href="#problema">O problema</a>
+        <a href="#solucao">A solução</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#para-quem">Para quem é</a>
+      </nav>
+      <a class="btn" href="https://wa.me/55SEUNUMEROAQUI" target="_blank" rel="noopener">
+        Falar no WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </header>
 
-        <section>
-            <h2>O problema</h2>
-            <p>A maioria dos médicos sabe que precisa manter presença digital. Mas entre consultas, plantões e rotina, sobra pouco tempo (e vontade) para criar conteúdo com qualidade.</p>
-            <p>O resultado costuma ser um Instagram irregular, genérico ou abandonado.</p>
-        </section>
-
-        <section>
-            <h2>A solução</h2>
-            <p>Eu cuido de toda a criação de conteúdo nos bastidores. Você só revisa e publica.</p>
-            
-            <ul>
-                <li>Posts para feed (carrosséis e estáticos)</li>
-                <li>Roteiros de Reels prontos</li>
-                <li>Legendas e hashtags otimizadas</li>
-                <li>E-mails e mensagens para pacientes</li>
-                <li>Texto longo (newsletter ou artigo)</li>
-            </ul>
-
-            <div class="highlight">
-                Tudo entregue de forma organizada, com calendário de publicação e linguagem adequada à sua especialidade.
-            </div>
-        </section>
-
-        <section>
-            <h2>Como funciona</h2>
-            <ul>
-                <li>Você me conta sua especialidade e preferências de tom</li>
-                <li>Eu produzo o pack completo do mês</li>
-                <li>Você recebe tudo organizado e pronto para uso</li>
-                <li>Qualquer ajuste necessário é feito rapidamente</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Para quem é</h2>
-            <p>Médicos que querem manter uma presença digital consistente e profissional, sem gastar tempo escrevendo ou aparecendo excessivamente.</p>
-            <p>Especialmente útil para cardiologistas, clínicos, geriatras e outras especialidades que precisam de conteúdo educativo e de autoridade.</p>
-        </section>
-
-        <div class="cta">
-            <a href="https://wa.me/55SEUNUMEROAQUI" class="button" target="_blank">Falar no WhatsApp</a>
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="topo">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow rise">Conteúdo médico de autoridade</p>
+          <h1 class="rise d1">Sua autoridade médica, construída <em>nos bastidores.</em></h1>
+          <p class="hero-sub rise d2">Conteúdo profissional para médicos, sem que você precise escrever uma linha. Você só revisa e publica.</p>
+          <div class="hero-actions rise d3">
+            <a class="btn" href="https://wa.me/55SEUNUMEROAQUI" target="_blank" rel="noopener">
+              Falar no WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
+          </div>
+          <ul class="hero-formats rise d4">
+            <li>Feed &amp; carrosséis</li>
+            <li>Roteiros de Reels</li>
+            <li>Legendas e hashtags</li>
+            <li>Newsletter</li>
+          </ul>
         </div>
 
-        <footer>
-            Presença Digital Invisível · Conteúdo nos bastidores para médicos
-        </footer>
+        <!-- Composição visual em CSS -->
+        <div class="pack rise d2" aria-hidden="true">
+          <div class="float float-reel">
+            <span class="thumb">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <span>
+              <b>Reels</b>
+              <small>roteiro pronto</small>
+            </span>
+          </div>
 
+          <article class="post">
+            <div class="post-head">
+              <span class="avatar"></span>
+              <span class="post-user">
+                <b>dra.seunome</b>
+                <span>Cardiologia</span>
+              </span>
+              <span class="post-dots">•••</span>
+            </div>
+            <div class="post-art">
+              <span class="orbit"></span>
+              <span class="post-tag">Cardiologia</span>
+              <p class="post-title">3 sinais de que seu coração pede <em>atenção</em></p>
+            </div>
+            <div class="post-foot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.7 8.7 0 0 1-3.7-.9L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              <span class="meta">legenda + hashtags</span>
+            </div>
+          </article>
+
+          <div class="float float-cal">
+            <div class="cal-head">
+              <div>
+                <small>Calendário</small>
+                <b>06</b>
+              </div>
+              <small>edit.</small>
+            </div>
+            <div class="cal-grid">
+              <i></i><i class="on"></i><i></i><i class="soft"></i><i></i><i></i><i></i>
+              <i></i><i></i><i class="soft"></i><i></i><i class="on"></i><i></i><i></i>
+              <i class="soft"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip-track">
+        <div class="strip-group">
+          <span>Carrosséis</span><i></i><span>Reels</span><i></i><span>Legendas</span><i></i><span>Hashtags</span><i></i><span>E-mails</span><i></i><span>Newsletter</span><i></i><span>Calendário editorial</span><i></i>
+        </div>
+        <div class="strip-group">
+          <span>Carrosséis</span><i></i><span>Reels</span><i></i><span>Legendas</span><i></i><span>Hashtags</span><i></i><span>E-mails</span><i></i><span>Newsletter</span><i></i><span>Calendário editorial</span><i></i>
+        </div>
+      </div>
     </div>
+
+    <!-- Problema -->
+    <section class="band paper" id="problema">
+      <div class="wrap split">
+        <div class="split-head reveal">
+          <p class="eyebrow">O problema</p>
+          <h2>Entre plantões e consultas, o conteúdo fica para depois.</h2>
+          <p>A maioria dos médicos sabe que precisa manter presença digital. Mas a rotina consome o tempo (e a vontade) de criar conteúdo com qualidade.</p>
+        </div>
+
+        <div class="diagnosis">
+          <article class="diag-card reveal">
+            <span class="diag-num" aria-hidden="true">01</span>
+            <div>
+              <h3>Publicações irregulares</h3>
+              <p>Semanas em silêncio e correria para publicar algo no último minuto — quando sobra tempo entre um plantão e outro.</p>
+            </div>
+          </article>
+          <article class="diag-card reveal" style="--d: 90ms">
+            <span class="diag-num" aria-hidden="true">02</span>
+            <div>
+              <h3>Conteúdo genérico</h3>
+              <p>Textos que qualquer perfil poderia publicar, sem a sua voz, a sua especialidade e a sua autoridade.</p>
+            </div>
+          </article>
+          <article class="diag-card reveal" style="--d: 180ms">
+            <span class="diag-num" aria-hidden="true">03</span>
+            <div>
+              <h3>Falta de tempo</h3>
+              <p>Depois de um dia inteiro de atendimentos, criar carrossel e roteiro de Reels não é prioridade — e não deveria ser.</p>
+            </div>
+          </article>
+
+          <div class="pullquote reveal" style="--d: 260ms">
+            <q>O resultado costuma ser um Instagram <em>irregular, genérico ou abandonado.</em></q>
+            <span>O diagnóstico mais comum</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solução -->
+    <section class="band paper-2" id="solucao">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">A solução</p>
+          <h2>Eu cuido do conteúdo. Você revisa e publica.</h2>
+          <p>Toda a criação acontece nos bastidores, com linguagem adequada à sua especialidade e um padrão de entrega que você consegue manter.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
+            <h3>Posts para feed</h3>
+            <p>Carrosséis e estáticos com identidade visual consistente e leitura fácil no celular.</p>
+          </article>
+
+          <article class="card reveal" style="--d: 80ms">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="5" width="14" height="14" rx="3"/><path d="M16 10l6-3.5v11L16 14"/></svg>
+            </span>
+            <h3>Roteiros de Reels</h3>
+            <p>Roteiros prontos para gravar: gancho, desenvolvimento e chamada final.</p>
+          </article>
+
+          <article class="card reveal" style="--d: 160ms">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h10"/><path d="M10 3 8 21M16 3l-2 18"/></svg>
+            </span>
+            <h3>Legendas e hashtags</h3>
+            <p>Textos otimizados, no seu tom de voz, prontos para copiar e publicar.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+            </span>
+            <h3>E-mails e mensagens</h3>
+            <p>Comunicação clara para pacientes, sem ruído e com o cuidado que o tema exige.</p>
+          </article>
+
+          <article class="card reveal" style="--d: 80ms">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5M9 13h6M9 17h4"/></svg>
+            </span>
+            <h3>Texto longo</h3>
+            <p>Newsletter ou artigo com profundidade — o formato que constrói autoridade de verdade.</p>
+          </article>
+
+          <article class="card reveal" style="--d: 160ms">
+            <span class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="17" rx="2.5"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+            </span>
+            <h3>Calendário de publicação</h3>
+            <p>Tudo organizado por data, formato e tema — você só segue o plano.</p>
+          </article>
+        </div>
+
+        <div class="note-band reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.5 14.6 8l6 .9-4.4 4.3 1 6-5.2-2.8L6.8 19l1-6L3.4 8.9 9.4 8z"/></svg>
+          <span>Tudo entregue de forma organizada, com calendário de publicação e linguagem adequada à sua especialidade.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="band ink" id="como-funciona">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2>Quatro passos, do briefing à publicação.</h2>
+          <p>Um processo simples e previsível — sem reuniões longas e sem cobrança de conteúdo por sua parte.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <h3>Briefing</h3>
+            <p>Você me conta sua especialidade e preferências de tom.</p>
+          </article>
+          <article class="step reveal" style="--d: 90ms">
+            <span class="step-num" aria-hidden="true">02</span>
+            <h3>Produção</h3>
+            <p>Eu produzo o pack completo do mês, nos bastidores.</p>
+          </article>
+          <article class="step reveal" style="--d: 180ms">
+            <span class="step-num" aria-hidden="true">03</span>
+            <h3>Entrega</h3>
+            <p>Você recebe tudo organizado e pronto para uso.</p>
+          </article>
+          <article class="step reveal" style="--d: 270ms">
+            <span class="step-num" aria-hidden="true">04</span>
+            <h3>Ajustes</h3>
+            <p>Qualquer ajuste necessário é feito rapidamente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para quem é -->
+    <section class="band paper" id="para-quem">
+      <div class="wrap audience">
+        <div class="reveal">
+          <p class="eyebrow">Para quem é</p>
+          <h2>Para médicos que querem autoridade sem virar criadores de conteúdo.</h2>
+          <p>Médicos que querem manter uma presença digital consistente e profissional, sem gastar tempo escrevendo ou aparecendo excessivamente.</p>
+          <div class="chips" aria-label="Especialidades atendidas">
+            <span class="chip">Cardiologia</span>
+            <span class="chip">Clínica médica</span>
+            <span class="chip">Geriatria</span>
+            <span class="chip mute">e outras especialidades</span>
+          </div>
+        </div>
+
+        <aside class="audience-panel reveal" style="--d: 120ms">
+          <h3>Conteúdo educativo, com responsabilidade.</h3>
+          <p>Especialmente útil para especialidades que precisam de conteúdo educativo e de autoridade — sem promessas, sem sensacionalismo.</p>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+              Linguagem adequada à sua especialidade
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+              Entrega organizada por calendário
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+              Você revisa antes de publicar
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="band paper" style="padding-top: 0">
+      <div class="wrap">
+        <div class="cta-panel reveal">
+          <p class="eyebrow">Vamos começar</p>
+          <h2>Sua próxima publicação pode sair hoje do rascunho.</h2>
+          <p>Me conte sua especialidade e receba uma proposta de pack mensal, com formatos e calendário definidos.</p>
+          <div class="cta-actions">
+            <a class="btn" href="https://wa.me/55SEUNUMEROAQUI" target="_blank" rel="noopener">
+              Falar no WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn ghost" href="#solucao">Rever o que está incluído</a>
+          </div>
+          <p class="cta-small">Conversa direta pelo WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div class="foot-brand">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>
+          Presença Digital Invisível
+          <small>Conteúdo nos bastidores para médicos</small>
+        </span>
+      </div>
+      <nav class="foot-links" aria-label="Links do rodapé">
+        <a href="#problema">O problema</a>
+        <a href="#solucao">A solução</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#para-quem">Para quem é</a>
+      </nav>
+      <span>© <span id="ano">2026</span> · Todos os direitos reservados</span>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+
+    if (!reduce && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    var nav = document.querySelector('.nav');
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 12); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    var year = document.getElementById('ano');
+    if (year) year.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>
